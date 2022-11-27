@@ -1,0 +1,135 @@
+# My Variables
+@contentType = application/json
+@baseurl = http://localhost:4000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzc5ZjY3NzhlMTg3NDA2YjY0Mzk2YjciLCJpYXQiOjE2Njg5MzczMzYsImV4cCI6MTY2OTE5NjUzNn0.dWq1GPvujtGp168vSu3z_dtZBNd_ohl0HNi1vylqjT8
+
+### Signup
+POST {{baseurl}}/api/user/signup
+Content-Type: {{contentType}}
+
+{
+    "email": "matti@matti.fi",
+    "password": "R3g5T7#gh"
+}
+
+### login
+POST {{baseurl}}/api/user/login
+Content-Type: {{contentType}}
+
+{
+    "email": "matti@matti.fi",
+    "password": "R3g5T7#gh"
+}
+
+### logout not implemented yet (should clear the storage)
+
+
+### POST Request
+POST {{baseurl}}/api/workouts/
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "title":"Situps",
+    "reps":60,
+    "load":1
+}
+
+### POST Request
+POST {{baseurl}}/api/workouts/
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "title":"Workout 5",
+    "reps":40,
+    "load":10
+}
+
+### GET Request
+GET {{baseurl}}/api/workouts
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+### GET Request
+GET {{baseurl}}/api/workouts/6379e1849df16cc3df69bcb2
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+### GET Request (Authorization error)
+GET {{baseurl}}/api/workouts/6379e1849df16cc3df69bcb2
+Content-Type: {{contentType}}
+
+### GET Request (does not exist)
+GET {{baseurl}}/api/workouts/625158890e75b4ff2a109ab9999
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+
+### DELET Request
+DELETE {{baseurl}}/api/workouts/6379db4b9df16cc3df69bc87
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+### DELET Request   (Authorization error)
+DELETE {{baseurl}}/api/workouts/6251a0ed1317e5dff269f8aa
+Content-Type: {{contentType}}
+
+### DELET Request  (does not exist)
+DELETE {{baseurl}}/api/workouts/6251a0ed1317e5dff269f8aa
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+### unknown end point
+GET {{baseurl}}/api/workoutsss/15
+Content-Type: {{contentType}}
+
+### POST Request
+POST {{baseurl}}/api/workouts/
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "title":"situps 3",
+    "reps":70,
+    "load":0
+}
+
+
+###
+POST {{baseurl}}/api/workouts/ HTTP/1.1
+content-type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "title":"workout 10",
+    "reps":54,
+    "load":64
+}
+
+###
+POST {{baseurl}}/api/workouts/ HTTP/1.1
+content-type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "title":"workout 9",
+    "reps":554,
+    "load":544
+}
+
+### GET Request
+GET {{baseurl}}/api/workouts
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+
+### PUT  Request
+PATCH {{baseurl}}/api/workouts/6379e2969df16cc3df69bccc
+Content-Type: {{contentType}}
+Authorization: bearer {{token}}
+
+{
+    "reps":579,
+    "load":544
+}

@@ -1,0 +1,35 @@
+# My Variables
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdmNDliZjg1NTg4NzBiZGFkODg5ZDMiLCJpYXQiOjE2NjkyODc2OTcsImV4cCI6MTY2OTU0Njg5N30.zK5uz8D2AYEBHzU6YWinwBDozkSQSwZY2KSMfB1Vvm0
+
+
+### login
+POST http://localhost:4000/api/user/login
+Content-Type: application/json
+
+{
+    "email": "erik3@metropolia.fi",
+    "password": "qweQWE123!!"
+}
+
+
+
+### POST Request
+POST http://localhost:4000/api/workouts/
+Content-Type: application/json
+Authorization: bearer {{token}}
+
+{
+    "title":"boo Situps",
+    "reps":60,
+    "load":1
+}
+
+### GET Request
+GET http://localhost:4000/api/workouts
+Content-Type: application/json
+Authorization: bearer {{token}}
+
+### GET Request
+GET http://localhost:4000/api/workouts/637f20c5b48107f2d9627410
+Content-Type: application/json
+Authorization: bearer {{token}}

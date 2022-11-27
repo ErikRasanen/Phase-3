@@ -1,0 +1,35 @@
+# My Variables
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzdmMWE3ODg2NDg1MGI3M2M4NjdiMzIiLCJpYXQiOjE2NjkyNzQ1ODQsImV4cCI6MTY2OTUzMzc4NH0.JDtw8HxC92JjV0o-UGszCCFtsUeQOIrWyjj9sHUK85g
+
+
+### login
+POST https://backend-v2.onrender.com/api/user/login
+Content-Type: application/json
+
+{
+    "email": "erik@metropolia.fi",
+    "password": "qweQWE123!"#"
+}
+
+
+
+### POST Request
+POST https://backend-v2.onrender.com/api/workouts/
+Content-Type: application/json
+Authorization: bearer {{token}}
+
+{
+    "title":"Sami Situps",
+    "reps":60,
+    "load":1
+}
+
+### GET Request
+GET https://backend-v2.onrender.com/api/workouts
+Content-Type: application/json
+Authorization: bearer {{token}}
+
+### GET Request
+GET https://backend-v2.onrender.com/api/workouts/637f1a91864850b73c867b39
+Content-Type: application/json
+Authorization: bearer {{token}}
